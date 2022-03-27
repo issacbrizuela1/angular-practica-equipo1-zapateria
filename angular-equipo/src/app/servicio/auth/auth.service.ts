@@ -21,4 +21,21 @@ export class AuthService {
   login(user:LUser):Observable<any>{
     return this.http.post(`${this.apiURL}login`,user);
   }
+
+  //usuarios
+  getUsuarios(){
+    return this.http.get<User[]>(`${this.apiURL}usuario`);
+  }
+  addUsuario(usuario:User){
+    return this.http.post(`${this.apiURL}usuario`,usuario);
+  }
+  getUsuario(id:number|string|null){
+    return this.http.get(`${this.apiURL}usuario/${id}`);
+  }
+  deletUsuario(id:string){
+    return this.http.delete(`${this.apiURL}usuario/${id}`);
+  }
+  updateUsuario(updateUsuario:User):Observable<User>{
+    return this.http.patch<User>(`${this.apiURL}usuario/${updateUsuario.id}`,updateUsuario)
+  } 
 }

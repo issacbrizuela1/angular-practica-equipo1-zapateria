@@ -3,8 +3,15 @@
     <div class="card-header">
       <h3>USUARIOS</h3>
     </div>
+    <br />
+    <!--
+      (click)="nuevoUsuario()"
+      metodo para agregar un usuario
+    -->
+    <button class="btn btn-outline-dark col-md-12">Nuevo usuario</button>
+    <br />
     <div class="card-body">
-      <table class="table table-hover">
+      <table class="table table-responsive table-hover" style="width: auto">
         <thead>
           <tr class="text-center">
             <th>NOMBRE DE USUARIO</th>
@@ -15,13 +22,11 @@
         </thead>
         <tbody>
           <!-- *ngFor="let usuario of usuario"-->
-          <tr class="text-center">
-            <!--
+          <tr class="text-center" *ngFor="let usuario of usuario">
             <td>{{ usuario.username }}</td>
-            <td>{{ usuario.correo }}</td>
+            <td>{{ usuario.email }}</td>
             <td>{{ usuario.tipo_usuario }}</td>
             <td>{{ usuario.estado }}</td>
-            -->
             <td>
               <!--(click)="editarus(usuario)" (click)="deleteUsuario(usuario.id)"-->
               <button class="btn btn-outline-info">Editar</button>
@@ -35,11 +40,4 @@
     </div>
   </div>
   <br />
-  <!--
-      (click)="nuevoUsuario()"
-      metodo para agregar un usuario
-    -->
-  <button class="btn btn-outline-dark col-md-12">
-    Nuevo usuario
-  </button>
 </div>
