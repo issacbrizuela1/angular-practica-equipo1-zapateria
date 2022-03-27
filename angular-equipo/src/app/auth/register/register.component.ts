@@ -35,10 +35,12 @@ export class RegisterComponent implements OnInit {
       this.authService.registro(this.user).subscribe(
         (data: any) => {
           timeMessage('Registrado', 1500);
-          this.router.navigate(['/login']);
+          console.log(this.user);
+          //this.router.navigate(['/login']);
         },
         (_error) => {
           errorMessage('Ha ocurrido un error.');
+          console.log(this.user);
         }
       );
     }
@@ -54,6 +56,7 @@ export class RegisterComponent implements OnInit {
       ],
       password: ['', [Validators.required]],
       password2: ['', [Validators.required]],
+      username: ['', [Validators.required]],
     });
   }
 
@@ -80,6 +83,9 @@ export class RegisterComponent implements OnInit {
       email: this.registroForm.get('email')?.value,
       password: this.registroForm.get('password')?.value,
       password2: this.registroForm.get('password_confirmation')?.value,
+      tipo_usuario: 1,
+      username: this.registroForm.get('username')?.value,
+      estado: 1,
     };
   }
 }

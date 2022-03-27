@@ -11,8 +11,16 @@
         font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
       "
     >
-      LOGIN
+      REGISTER
     </h1>
+    <label class="sr-only" for="inputusername">Username</label>
+    <input
+      type="text"
+      class="form-control mb-2"
+      id="inputusername"
+      placeholder="username"
+      formControlName="nombreusuario"
+    />
     <label class="sr-only" for="inputEmail">Email Address</label>
     <input
       type="email"
@@ -57,6 +65,6 @@
       [routerLink]="['/login']"
       >Ya tienes una cuenta?</a
     >
-    <p class="mt-4 mb-3 text-muted">©CodeDevsGroup - 2022</p>
+    <p class="mt-4 mb-3 text-muted">©Issac - 2022</p>
   </form>
 </div>
