@@ -84,7 +84,7 @@ export class RegisterComponent implements OnInit {
       password: this.registroForm.get('password')?.value,
       password2: this.registroForm.get('password_confirmation')?.value,
       tipo_usuario: 1,
-      username: this.registroForm.get('username')?.value,
+      username: this.registroForm.get('nombreusuario')?.value,
       estado: 1,
     };
   }
