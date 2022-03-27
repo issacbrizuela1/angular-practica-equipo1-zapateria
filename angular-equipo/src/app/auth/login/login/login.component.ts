@@ -5,6 +5,7 @@ import { errorMessage, successDialog, timeMessage } from 'src/app/funciones/aler
 import { User } from 'src/app/modelos/user';
 import {CookieService} from 'ngx-cookie-service'
 import { AuthService } from 'src/app/servicio/auth/auth.service';
+import { LUser } from 'src/app/modelos/luser';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ import { AuthService } from 'src/app/servicio/auth/auth.service';
 })
 export class LoginComponent implements OnInit {
   loginForm!:FormGroup
-  user!:User;
+  user!:LUser;
   constructor(private fb:FormBuilder,private authService:AuthService,private router:Router,private cookieService:CookieService) {
     this.createFrom();
     this.login();

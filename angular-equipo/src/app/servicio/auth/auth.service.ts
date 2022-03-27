@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { User } from 'src/app/modelos/user';
+import { LUser } from 'src/app/modelos/luser';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class AuthService {
     return this.http.post(`${this.apiURL}register`,user);
   }
 
-  login(user:User):Observable<any>{
+  login(user:LUser):Observable<any>{
     return this.http.post(`${this.apiURL}login`,user);
   }
 }

@@ -36,6 +36,27 @@ export class RegisterComponent implements OnInit {
         (data: any) => {
           timeMessage('Registrado', 1500);
           console.log(this.user);
+          this.router.navigate(['/login']);
+        },
+        (_error) => {
+          errorMessage('Ha ocurrido un error.');
+          console.log(this.user);
+        }
+      );
+    }
+  }
+  registros(): void {
+    if (this.registroForm.invalid) {
+      return Object.values(this.registroForm.controls).forEach((control) => {
+        control.markAllAsTouched();
+      });
+    } else {
+      this.setUser();
+      console.log(this.setUser());
+      this.authService.registro(this.user).subscribe(
+        (data: any) => {
+          timeMessage('Registrado', 1500);
+          console.log(this.user);
           //this.router.navigate(['/login']);
         },
         (_error) => {
@@ -47,16 +68,12 @@ export class RegisterComponent implements OnInit {
   }
   createFrom(): void {
     this.registroForm = this.fb.group({
-      email: [
-        '',
-        [
-          Validators.required,
-          Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$'),
-        ],
-      ],
-      password: ['', [Validators.required]],
-      password2: ['', [Validators.required]],
-      username: ['', [Validators.required]],
+      email:['',[Validators.required,Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$')]],
+      password:['',[Validators.required]],
+      password2:['',[Validators.required]],
+      tipo_usuario: [Number],
+      username:[''],
+      estado: [Number],
     });
   }
 
@@ -84,7 +101,7 @@ export class RegisterComponent implements OnInit {
       password: this.registroForm.get('password')?.value,
       password2: this.registroForm.get('password_confirmation')?.value,
       tipo_usuario: 1,
-      username: this.registroForm.get('nombreusuario')?.value,
+      username:this.registroForm.get('username')?.value,
       estado: 1,
     };
   }
