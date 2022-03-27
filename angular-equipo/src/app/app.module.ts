@@ -3,8 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login/login.component';
-import { InicioComponent } from './main/inicio/inicio.component';
-import { UsuariosComponent } from './main/tablas/usuarios/usuarios.component';
 import { AuthInterceptorService } from './interceptor/auth-interceptor.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { VigilanteGuard } from './guard/vigilante.guard';
@@ -16,7 +14,6 @@ import { RegisterComponent } from './auth/register/register.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    UsuariosComponent,
     RegisterComponent,
   ],
   imports: [

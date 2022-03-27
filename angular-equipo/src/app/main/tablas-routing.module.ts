@@ -9,7 +9,7 @@ const routes: Routes = [
     children: [
       { path: 'usuarios', component: UsuariosComponent },
       { path: 'inicio', component: InicioComponent },
-      { path: '**', redirectTo: '/inicio' },
+      { path: '**', redirectTo: '/ini/inicio' },
     ],
     canActivateChild: [VigilanteGuard],
   },

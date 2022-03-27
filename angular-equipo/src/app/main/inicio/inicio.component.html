@@ -11,50 +11,84 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <nav
+      class="navbar navbar-expand-lg navbar-light"
+      style="background-color: #e3f2fd"
+    >
       <div class="container-fluid">
-        <img
-          src="https://i.pinimg.com/originals/36/d4/62/36d46285c8bc86c5f0d9238275887f88.png"
-          alt="Avatar Logo"
-          style="width: 40px"
-          class="rounded-pill"
-        />
+        <a class="navbar-brand">ZAPATERIA INV</a>
         <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#collapsibleNavbar"
+          data-bs-target="#navbarScroll"
+          aria-controls="navbarScroll"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <ul class="navbar-nav">
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul
+            class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+            style="--bs-scroll-height: 100px"
+          >
             <li class="nav-item">
-              <a class="nav-link" href="ini/inicio">INICIO</a>
+              <a
+                class="nav-link active"
+                aria-current="page"
+                routerLink="ini/inicio"
+                >Inicio</a
+              >
             </li>
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
                 href="#"
+                id="navbarScrollingDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
-                >LISTA</a
+                aria-expanded="false"
               >
-              <ul class="dropdown-menu">
-                <!--
-                  (click)="listarAutores()"
-                  este evento nos permitira cambiar el estado
-                  haciendo que muestre el componente de dicho estado
-              -->
-                <li><a class="dropdown-item">USUARIOS</a></li>
+                Tablas
+              </a>
+              <ul
+                class="dropdown-menu"
+                aria-labelledby="navbarScrollingDropdown"
+              >
+                <li>
+                  <a class="dropdown-item" (click)="listarUsuarios()"
+                    >Usuarios</a
+                  >
+                </li>
               </ul>
             </li>
-            <!--
-            (click)="cerrarsesion()"
-            evento que nos permite cerrar la cesion borrando el almacenamiento local
-        -->
-            <li class="nav-item"><a class="nav-link">CERRAR SESIÓN</a></li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarScrollingDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Nuevo
+              </a>
+              <ul
+                class="dropdown-menu"
+                aria-labelledby="navbarScrollingDropdown"
+              >
+                <li>
+                  <a class="dropdown-item" routerLink="/form-usuario"
+                    >Usuarios</a
+                  >
+                </li>
+              </ul>
+            </li>
           </ul>
+          <button class="btn btn-outline-danger" (click)="cerrarsesion()">
+            Cerrar Sesion
+          </button>
         </div>
       </div>
     </nav>
@@ -64,17 +98,12 @@
          ira dentro del div de abajo servira para el estado del contenido esto
          servira para cargar los diferentes componentes que se iran creando
     -->
-      <div>
+      <div *ngIf="estado == 1">
         <!--muestra los otros componentes en esta misma pagina-->
-        <!--
         <app-usuarios></app-usuarios>
-        -->
       </div>
       <br />
     </div>
   </body>
 </html>
-<!--para el ruteador-->
-<!--
 <router-outlet></router-outlet>
--->

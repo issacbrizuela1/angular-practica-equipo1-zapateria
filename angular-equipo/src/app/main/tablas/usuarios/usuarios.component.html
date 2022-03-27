@@ -14,11 +14,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let usuario of usuario" class="text-center">
+          <!-- *ngFor="let usuario of usuario"-->
+          <tr class="text-center">
+            <!--
             <td>{{ usuario.username }}</td>
             <td>{{ usuario.correo }}</td>
             <td>{{ usuario.tipo_usuario }}</td>
             <td>{{ usuario.estado }}</td>
+            -->
             <td>
               <!--(click)="editarus(usuario)" (click)="deleteUsuario(usuario.id)"-->
               <button class="btn btn-outline-info">Editar</button>
