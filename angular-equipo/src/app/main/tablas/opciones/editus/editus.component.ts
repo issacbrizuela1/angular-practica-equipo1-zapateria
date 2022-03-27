@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router ,ActivatedRoute} from '@angular/router';
 import { errorMessage, successDialog } from 'src/app/funciones/alertas';
+import { Location } from '@angular/common';
 import { User } from 'src/app/modelos/user';
 import { AuthService } from 'src/app/servicio/auth/auth.service';
 

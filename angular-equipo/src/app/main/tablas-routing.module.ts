@@ -2,11 +2,15 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { VigilanteGuard } from '../guard/vigilante.guard';
 import { InicioComponent } from './inicio/inicio.component';
+import { AddusComponent } from './tablas/opciones/addus/addus.component';
+import { EditusComponent } from './tablas/opciones/editus/editus.component';
 import { UsuariosComponent } from './tablas/usuarios/usuarios.component';
 const routes: Routes = [
   {
     path: '',
     children: [
+      {path:'addus',component:AddusComponent},
+      {path:'editus',component:EditusComponent},
       { path: 'usuarios', component: UsuariosComponent },
       { path: 'inicio', component: InicioComponent },
       { path: '**', redirectTo: '/ini/inicio' },

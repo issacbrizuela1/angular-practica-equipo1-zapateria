@@ -5,15 +5,17 @@ import { InicioComponent } from '../main/inicio/inicio.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UsuariosComponent } from './tablas/usuarios/usuarios.component';
+import { EditusComponent } from './tablas/opciones/editus/editus.component';
+import { AddusComponent } from './tablas/opciones/addus/addus.component';
 
 @NgModule({
-  declarations: [InicioComponent,UsuariosComponent],
+  declarations: [InicioComponent,UsuariosComponent,EditusComponent,AddusComponent],
   imports: [
     CommonModule,
     TablasRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
 })
 export class TablasModule {}
