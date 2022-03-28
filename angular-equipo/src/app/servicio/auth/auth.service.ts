@@ -27,7 +27,7 @@ export class AuthService {
     return this.http.get<User[]>(`${this.apiURL}usuario`);
   }
   addUsuario(usuario:User){
-    return this.http.post(`${this.apiURL}usuario`,usuario);
+    return this.http.post(`${this.apiURL}register`,usuario);
   }
   getUsuario(id:number|string|null){
     return this.http.get(`${this.apiURL}usuario/${id}`);
@@ -36,6 +36,6 @@ export class AuthService {
     return this.http.delete(`${this.apiURL}usuario/${id}`);
   }
   updateUsuario(updateUsuario:User):Observable<User>{
-    return this.http.patch<User>(`${this.apiURL}usuario/${updateUsuario.id}`,updateUsuario)
+    return this.http.patch<User>(`${this.apiURL}editarUser/${updateUsuario.id}`,updateUsuario)
   } 
 }

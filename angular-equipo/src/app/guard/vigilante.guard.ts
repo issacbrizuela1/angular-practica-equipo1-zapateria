@@ -47,14 +47,13 @@ export class VigilanteGuard implements CanActivate {
     this.service.gettoken().subscribe(
       (res) => {
         (this.resp = true), console.log(res);
-        this.router.navigate(["/ini/inicio"])
+        //this.router.navigate(["/ini/inicio"])
       },
       (err) => {
         (this.resp = false),
           this.router.navigate(['/login']),
           localStorage.removeItem('token_access');
         localStorage.removeItem('id');
-
         console.error(err);
       }
     );

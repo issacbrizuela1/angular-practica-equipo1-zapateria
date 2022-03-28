@@ -8,7 +8,7 @@
       (click)="nuevoUsuario()"
       metodo para agregar un usuario
     -->
-    <button class="btn btn-outline-dark col-md-12">Nuevo usuario</button>
+    <button class="btn btn-outline-dark col-md-12" (click)="nuevoUsuario()">Nuevo usuario</button>
     <br />
     <div class="card-body">
       <table class="table table-responsive table-hover" style="width: auto">
@@ -29,8 +29,8 @@
             <td>{{ usuario.estado }}</td>
             <td>
               <!--(click)="editarus(usuario)" (click)="deleteUsuario(usuario.id)"-->
-              <button class="btn btn-outline-info">Editar</button>
-              <button class="btn btn-outline-dark" style="margin-left: 5px">
+              <button class="btn btn-outline-info" (click)="editarus(usuario)">Editar</button>
+              <button class="btn btn-outline-dark" (click)="deleteUsuario(usuario.id)" style="margin-left: 5px">
                 Borrar
               </button>
             </td>
@@ -39,5 +39,4 @@
       </table>
     </div>
   </div>
-  <br />
 </div>

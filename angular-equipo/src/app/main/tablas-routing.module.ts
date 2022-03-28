@@ -9,8 +9,8 @@ const routes: Routes = [
   {
     path: '',
     children: [
-      {path:'addus',component:AddusComponent},
-      {path:'editus',component:EditusComponent},
+      {path:'crearusuario',component:AddusComponent},
+      {path:'editarusuario',component:EditusComponent},
       { path: 'usuarios', component: UsuariosComponent },
       { path: 'inicio', component: InicioComponent },
       { path: '**', redirectTo: '/ini/inicio' },

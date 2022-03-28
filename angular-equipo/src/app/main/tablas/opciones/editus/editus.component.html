@@ -6,21 +6,67 @@
         <div class="card-body">
             <form action="">
                 <div class="form-group">
-
-                    <label for="">Correo:</label>
-                    <input type="text" class="form-control" [(ngModel)]="usuario.email" name="email">
+                  <label for="">Nombre:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    [(ngModel)]="usuario.username"
+                    name="username"
+                  />
+                </div>
+        
+                <div class="form-group">
+                  <label for="">Correo:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    [(ngModel)]="usuario.email"
+                    name="email"
+                  />
                 </div>
                 <div class="form-group">
-
-                    <label for="">Username:</label>
-                    <input type="text" class="form-control" [(ngModel)]="usuario.username" name="username">
+                  <label for="">tipo de usuario</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    [(ngModel)]="usuario.tipo_usuario"
+                    name="tipo_usuario"
+                  />
                 </div>
-
-                <button class="btn btn-outline-success col-md-12" style="margin-top: 20px;" (click)="actualizar(usuario)">Guardar</button>
-                <br> <br>
-                <button class="btn btn-outline-danger col-md-12" (click)="regresarAut()">Cancelar</button>
-                
-            </form>
+                <div class="form-group">
+                  <label for="">estado:</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    [(ngModel)]="usuario.estado"
+                    name="estado"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="">password:</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    [(ngModel)]="usuario.password"
+                    name="password"
+                  />
+                </div>
+                <button
+                  class="btn btn-outline-success col-md-12"
+                  style="margin-top: 20px"
+                  (click)="actualizar(usuario)"
+                >
+                  Guardar
+                </button>
+                <br />
+                <br />
+                <button
+                  class="btn btn-outline-danger col-md-12"
+                  (click)="regresarAut()"
+                >
+                  Cancelar
+                </button>
+              </form>
         </div>
     </div>
 </div>

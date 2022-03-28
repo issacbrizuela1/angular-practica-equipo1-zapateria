@@ -22,4 +22,20 @@ export class UsuariosComponent implements OnInit {
       (err) => console.error(err)
     );
   }
+  nuevoUsuario() {
+    this.router.navigate(['ini/crearusuario']);
+  }
+  editarus(usuario: User) {
+    localStorage.setItem('id', usuario.id.toString());
+    this.router.navigate(['ini/editarusuario']);
+  }
+  deleteUsuario(id: string) {
+    this.service.deletUsuario(id).subscribe(
+      (res) => {
+        console.log(res);
+        this.ngOnInit();
+      },
+      (err) => console.error(err)
+    );
+  }
 }

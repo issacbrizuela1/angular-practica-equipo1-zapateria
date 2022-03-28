@@ -11,7 +11,7 @@ import { AuthService } from 'src/app/servicio/auth/auth.service';
 })
 export class AddusComponent implements OnInit {
   usuario: User = {
-    id: 0,
+    id: null,
     tipo_usuario: 0,
     username: '',
     email: '',

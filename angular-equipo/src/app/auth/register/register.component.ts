@@ -97,6 +97,7 @@ export class RegisterComponent implements OnInit {
 
   setUser(): void {
     this.user = {
+      id:null,
       email: this.registroForm.get('email')?.value,
       password: this.registroForm.get('password')?.value,
       password2: this.registroForm.get('password_confirmation')?.value,
